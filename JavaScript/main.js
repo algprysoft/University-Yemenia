@@ -38,26 +38,36 @@ buttonScroll.onclick = function () {
 // End Scroll
 
 // Start Scroll Bar
-let scrollBar = document.querySelector(".scroll-bar > span");
-window.addEventListener("scroll", () => {
-  let scrollTop = window.scrollY;
-  let scrollHeight = document.body.scrollHeight;
-  let pageHeight = window.innerHeight;
-  let scrollBarHeight = (scrollTop / (scrollHeight - pageHeight)) * 100;
-  scrollBar.style.width = `${scrollBarHeight}%`;
-});
-// End Scroll Bar
-
-// Start Landing
 document.addEventListener("DOMContentLoaded", () => {
-  let landing = document.querySelector(".landing");
-  let imgsLanding = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.png"];
+  const landing = document.querySelector(".landing");
 
-  if (landing) {
-    setInterval(() => {
-      let randImgLand = Math.floor(Math.random() * imgsLanding.length);
-     landing.style.backgroundImage = `url(/University-Yemenia/images/${imgsLanding[randImgLand]})`;
-    }, 5000);
+  if (!landing) return;
+
+  const images = [
+    "01.jpg",
+    "02.jpg",
+    "03.jpg",
+    "04.jpg",
+    "05.png",
+  ];
+
+  let index = 0;
+
+  function changeBackground() {
+    landing.style.backgroundImage = `url("/University-Yemenia/images/${images[index]}")`;
+    landing.style.transition = "background-image 1s ease-in-out";
+
+    index++;
+    if (index >= images.length) {
+      index = 0;
+    }
   }
+
+  // أول صورة
+  changeBackground();
+
+  // يتكرر كل 5 ثواني
+  setInterval(changeBackground, 5000);
 });
+
 // End Landing
