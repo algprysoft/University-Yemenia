@@ -38,6 +38,17 @@ buttonScroll.onclick = function () {
 // End Scroll
 
 // Start Scroll Bar
+let scrollBar = document.querySelector(".scroll-bar > span");
+window.addEventListener("scroll", () => {
+  let scrollTop = window.scrollY;
+  let scrollHeight = document.body.scrollHeight;
+  let pageHeight = window.innerHeight;
+  let scrollBarHeight = (scrollTop / (scrollHeight - pageHeight)) * 100;
+  scrollBar.style.width = `${scrollBarHeight}%`;
+});
+// End Scroll Bar
+
+// Start Landing
 document.addEventListener("DOMContentLoaded", () => {
   const landing = document.querySelector(".landing");
 
@@ -54,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let index = 0;
 
   function changeBackground() {
-    landing.style.backgroundImage = `url("../images/${images[index]}")`;
+    landing.style.backgroundImage = `url("/University-Yemenia/images/${images[index]}")`;
     landing.style.transition = "background-image 1s ease-in-out";
 
     index++;
@@ -69,5 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // يتكرر كل 5 ثواني
   setInterval(changeBackground, 5000);
 });
+
 
 // End Landing
