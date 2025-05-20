@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let index = 0;
 
   function changeBackground() {
-    landing.style.backgroundImage = `url("/University-Yemenia/images/${images[index]}")`;
+    landing.style.backgroundImage = `url("../images/${images[index]}")`;
     landing.style.transition = "background-image 1s ease-in-out";
 
     index++;
