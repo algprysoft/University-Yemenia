@@ -549,7 +549,7 @@ header .container > img {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 40px 50px;
+  padding: 40px 20px;
   background: var(--main-color);
   position: relative;
   border-radius: 20px;
