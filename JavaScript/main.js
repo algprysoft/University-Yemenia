@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (landing) {
     setInterval(() => {
       let randImgLand = Math.floor(Math.random() * imgsLanding.length);
-      landing.style.backgroundImage = `url("/images/${imgsLanding[randImgLand]}")`;
+     landing.style.backgroundImage = `url(/University-Yemenia/images/${imgsLanding[randImgLand]})`;
     }, 5000);
   }
 });
