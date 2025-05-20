@@ -867,6 +867,18 @@ header .container > img {
   transform: translateY(-50%);
   text-align: center;
 }
+@media (max-width: 340px) {
+  .branch-content .container > div > .img > h3 {
+    left: 40px;
+  }
+  .branch-content .container > div > .content > .colleges > div > p {
+    top: 75%;
+    left: 5px;
+  }
+  .branch-content .container > div > .content > .cont-div > span {
+    margin-right: 10px;
+  }
+}
 /* ***************************************************************************** */
 /* ********************************* End Branches ****************************** */
 /* ***************************************************************************** */
