@@ -49,10 +49,15 @@ window.addEventListener("scroll", () => {
 // End Scroll Bar
 
 // Start Landing
-let landing = document.querySelector(".landing");
-let imgsLanding = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.png"];
-setInterval(() => {
-  let randImgLand = Math.floor(Math.random() * imgsLanding.length);
-  landing.style.backgroundImage = `url(../images/${imgsLanding[randImgLand]})`;
-}, 5000);
+document.addEventListener("DOMContentLoaded", () => {
+  let landing = document.querySelector(".landing");
+  let imgsLanding = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.png"];
+
+  if (landing) {
+    setInterval(() => {
+      let randImgLand = Math.floor(Math.random() * imgsLanding.length);
+      landing.style.backgroundImage = `url(../images/${imgsLanding[randImgLand]})`;
+    }, 5000);
+  }
+});
 // End Landing
